@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Jonathan Skaggs | Technology Professional</title>
+
+<meta name="description"
+content="Jonathan Skaggs - Assistant Director of Technology, IT Leadership, Systems Administration, Project Management">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+    --primary:#2563eb;
+    --primary-dark:#1d4ed8;
+    --dark:#0f172a;
+    --slate:#334155;
+    --gray:#64748b;
+    --light:#f8fafc;
+    --border:#e2e8f0;
+    --white:#ffffff;
+    --shadow:0 15px 40px rgba(0,0,0,.08);
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Inter',sans-serif;
+    color:var(--dark);
+    line-height:1.7;
+    background:white;
+}
+
+.container{
+    width:min(1150px,90%);
+    margin:auto;
+}
+
+section{
+    padding:90px 0;
+}
+
+h1,h2,h3,h4{
+    line-height:1.2;
+}
+
+h2.section-title{
+    text-align:center;
+    font-size:2.5rem;
+    margin-bottom:1rem;
+}
+
+.section-subtitle{
+    text-align:center;
+    color:var(--gray);
+    margin-bottom:4rem;
+}
+
+header{
+    position:fixed;
+    top:0;
+    width:100%;
+    z-index:999;
+    background:rgba(255,255,255,.95);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--border);
+}
+
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    height:75px;
+}
+
+.logo{
+    font-weight:800;
+    font-size:1.25rem;
+    color:var(--primary);
+}
+
+.nav-links{
+    display:flex;
+    gap:2rem;
+    list-style:none;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:var(--dark);
+    font-weight:600;
+}
+
+.nav-links a:hover{
+    color:var(--primary);
+}
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    background:
+    linear-gradient(135deg,#eef4ff 0%,#ffffff 100%);
+}
+
+.hero-grid{
+    display:grid;
+    grid-template-columns:1.1fr .9fr;
+    gap:4rem;
+    align-items:center;
+}
+
+.hero-content h1{
+    font-size:4.5rem;
+    margin-bottom:.5rem;
+}
+
+.hero-content h2{
+    color:var(--primary);
+    margin-bottom:1.5rem;
+    font-size:1.75rem;
+}
+
+.hero-content p{
+    color:var(--gray);
+    font-size:1.15rem;
+    margin-bottom:2rem;
+    max-width:650px;
+}
+
+.hero-image{
+    text-align:center;
+}
+
+.hero-image img{
+    width:100%;
+    max-width:450px;
+    border-radius:24px;
+    box-shadow:var(--shadow);
+}
+
+.buttons{
+    display:flex;
+    gap:1rem;
+    flex-wrap:wrap;
+}
+
+.btn{
+    padding:14px 28px;
+    border-radius:10px;
+    text-decoration:none;
+    font-weight:600;
+    transition:.3s;
+}
+
+.btn-primary{
+    background:var(--primary);
+    color:white;
+}
+
+.btn-primary:hover{
+    background:var(--primary-dark);
+}
+
+.btn-outline{
+    border:2px solid var(--primary);
+    color:var(--primary);
+}
+
+.btn-outline:hover{
+    background:var(--primary);
+    color:white;
+}
+
+.about{
+    background:var(--light);
+}
+
+.about-card{
+    background:white;
+    padding:3rem;
+    border-radius:20px;
+    box-shadow:var(--shadow);
+}
+
+.timeline{
+    max-width:900px;
+    margin:auto;
+}
+
+.timeline-item{
+    position:relative;
+    padding-left:2rem;
+    border-left:4px solid var(--primary);
+    margin-bottom:2.5rem;
+}
+
+.timeline-item::before{
+    content:"";
+    position:absolute;
+    left:-10px;
+    top:0;
+    width:16px;
+    height:16px;
+    border-radius:50%;
+    background:var(--primary);
+}
+
+.timeline-item h3{
+    margin-bottom:.5rem;
+}
+
+.timeline-company{
+    color:var(--primary);
+    font-weight:700;
+}
+
+.timeline-date{
+    color:var(--gray);
+    margin-bottom:1rem;
+}
+
+.timeline-item ul{
+    margin-left:1rem;
+}
+
+.timeline-item li{
+    margin-bottom:.4rem;
+}
+
+.skills{
+    background:var(--light);
+}
+
+.skills-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:1rem;
+}
+
+.skill-card{
+    background:white;
+    padding:1.25rem;
+    border-radius:14px;
+    text-align:center;
+    font-weight:600;
+    border:1px solid var(--border);
+    box-shadow:var(--shadow);
+}
+
+.education-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
+    gap:2rem;
+}
+
+.education-card{
+    background:white;
+    border-radius:20px;
+    padding:2rem;
+    box-shadow:var(--shadow);
+}
+
+.education-card h3{
+    margin-bottom:.75rem;
+}
+
+.education-card .school{
+    color:var(--primary);
+    font-weight:700;
+}
+
+.education-card .date{
+    color:var(--gray);
+}
+
+.contact{
+    background:linear-gradient(135deg,#0f172a,#1e293b);
+    color:white;
+    text-align:center;
+}
+
+.contact-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:1.5rem;
+    margin-top:3rem;
+}
+
+.contact-card{
+    background:rgba(255,255,255,.08);
+    padding:2rem;
+    border-radius:16px;
+}
+
+.contact-card a{
+    color:white;
+    text-decoration:none;
+}
+
+footer{
+    background:#020617;
+    color:#94a3b8;
+    text-align:center;
+    padding:2rem;
+}
+
+.back-to-top{
+    position:fixed;
+    right:25px;
+    bottom:25px;
+    width:55px;
+    height:55px;
+    border-radius:50%;
+    border:none;
+    background:var(--primary);
+    color:white;
+    font-size:20px;
+    cursor:pointer;
+    box-shadow:var(--shadow);
+}
+
+@media(max-width:900px){
+
+    .hero-grid{
+        grid-template-columns:1fr;
+        text-align:center;
+    }
+
+    .hero-image{
+        order:-1;
+    }
+
+    .hero-content h1{
+        font-size:3rem;
+    }
+
+    .buttons{
+        justify-content:center;
+    }
+
+    .nav-links{
+        display:none;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="container">
+<nav>
+
+<div class="logo">
+Jonathan Skaggs
+</div>
+
+<ul class="nav-links">
+<li><a href="#about">About</a></li>
+<li><a href="#experience">Experience</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#education">Education</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+
+</nav>
+</div>
+</header>
+
+<section class="hero">
+
+<div class="container">
+
+<div class="hero-grid">
+
+<div class="hero-content">
+
+<h1>Jonathan Skaggs</h1>
+
+<h2>Technology Professional</h2>
+
+<p>
+Technology leader with extensive experience supporting public sector and educational organizations. Skilled in IT leadership, systems administration, help desk management, project management, infrastructure planning, and technology strategy.
+</p>
+
+<div class="buttons">
+
+<a href="mailto:mail@jonathanskaggs.info"
+class="btn btn-primary">
+Contact Me
+</a>
+
+<a href="Jonathan-Skaggs-Resume.pdf"
+class="btn btn-outline"
+target="_blank">
+Download Resume
+</a>
+
+</div>
+
+</div>
+
+<div class="hero-image">
+
+<img src="headshot.png"
+alt="Jonathan Skaggs">
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="about" class="about">
+
+<div class="container">
+
+<h2 class="section-title">About Me</h2>
+
+<div class="about-card">
+
+<p>
+I am a dedicated technology professional with years of experience serving public-sector organizations. Currently serving as Assistant Director of Technology for Cheney Public Schools, I oversee help desk operations, technology planning initiatives, and strategic improvements that support students, staff, and organizational goals.
+</p>
+
+<br>
+
+<p>
+My background spans systems administration, network infrastructure, project management, technology leadership, and customer-focused IT service delivery across county government and K–12 education environments.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="experience">
+
+<div class="container">
+
+<h2 class="section-title">Professional Experience</h2>
+
+<p class="section-subtitle">
+A progression from technical support to technology leadership.
+</p>
+
+<div class="timeline">
+
+<div class="timeline-item">
+<h3>Assistant Director of Technology</h3>
+<div class="timeline-company">Cheney Public Schools</div>
+<div class="timeline-date">June 2023 – Present</div>
+<ul>
+<li>Supervise help desk operations and maintain SLAs.</li>
+<li>Lead technology planning initiatives.</li>
+<li>Assist with staff hiring and onboarding.</li>
+<li>Manage device replacement lifecycle planning.</li>
+</ul>
+</div>
+
+<div class="timeline-item">
+<h3>Network-Systems Administrator</h3>
+<div class="timeline-company">Stevens County</div>
+<div class="timeline-date">November 2021 – June 2023</div>
+<ul>
+<li>Managed Windows Server and Microsoft 365 environments.</li>
+<li>Deployed server and network infrastructure.</li>
+<li>Implemented device management systems.</li>
+</ul>
+</div>
+
+<div class="timeline-item">
+<h3>Systems Administrator</h3>
+<div class="timeline-company">Colville School District</div>
+<div class="timeline-date">August 2020 – December 2021</div>
+<ul>
+<li>Provided technical support and systems administration.</li>
+<li>Researched and recommended technology solutions.</li>
+<li>Supported end users and help desk operations.</li>
+</ul>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="skills" class="skills">
+
+<div class="container">
+
+<h2 class="section-title">Core Skills</h2>
+
+<div class="skills-grid">
+
+<div class="skill-card">IT Leadership</div>
+<div class="skill-card">Help Desk Management</div>
+<div class="skill-card">Project Management</div>
+<div class="skill-card">Windows Server</div>
+<div class="skill-card">Microsoft 365</div>
+<div class="skill-card">Systems Administration</div>
+<div class="skill-card">Network Administration</div>
+<div class="skill-card">Technology Planning</div>
+<div class="skill-card">Device Management</div>
+<div class="skill-card">Process Improvement</div>
+<div class="skill-card">Vendor Management</div>
+<div class="skill-card">Customer Service</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="education">
+
+<div class="container">
+
+<h2 class="section-title">Education</h2>
+
+<div class="education-grid">
+
+<div class="education-card">
+<h3>Bachelor of Science in ITAM</h3>
+<div class="school">Central Washington University</div>
+<p>Specialization in Project Management</p>
+<div class="date">2020 – 2022</div>
+</div>
+
+<div class="education-card">
+<h3>Associate of Arts – DTA</h3>
+<div class="school">Spokane Community College</div>
+<p>Business Law, Information Systems, Microsoft Office</p>
+<div class="date">2018 – 2020</div>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="contact" class="contact">
+
+<div class="container">
+
+<h2 class="section-title">Get In Touch</h2>
+
+<p>
+I'm always open to discussing technology leadership, projects, and opportunities.
+</p>
+
+<div class="contact-grid">
+
+<div class="contact-card">
+<h3>Email</h3>
+<a href="mailto:mail@jonathanskaggs.info">
+mail@jonathanskaggs.info
+</a>
+</div>
+
+<div class="contact-card">
+<h3>Phone</h3>
+<a href="tel:5096902798">
+(509) 690-2798
+</a>
+</div>
+
+<div class="contact-card">
+<h3>Location</h3>
+Spokane, Washington
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+© <span id="year"></span> Jonathan Skaggs. All Rights Reserved.
+</footer>
+
+<button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+↑
+</button>
+
+<script>
+
+document.getElementById('year').textContent =
+new Date().getFullYear();
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e){
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href'))
+            .scrollIntoView({
+                behavior:'smooth'
+            });
+    });
+});
+
+</script>
+
+</body>
+</html>
